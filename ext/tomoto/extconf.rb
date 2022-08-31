@@ -2,12 +2,12 @@ require "mkmf-rice"
 
 $CXXFLAGS += " -std=c++17 $(optflags) -DEIGEN_MPL2_ONLY"
 
-# $CXXFLAGS += " -march=native"
+# $CXXFLAGS += " -march=native" #
 
 apple_clang = RbConfig::CONFIG["CC_VERSION_MESSAGE"] =~ /apple clang/i
 
 if apple_clang
-  # silence rice warnings
+  # silence rice warnings 
   $CXXFLAGS += " -Wno-deprecated-declarations"
 else
   # silence eigen warnings
